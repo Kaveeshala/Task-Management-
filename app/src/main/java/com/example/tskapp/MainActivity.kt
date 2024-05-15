@@ -14,14 +14,18 @@ import kotlinx.coroutines.launch
 // dao - queries
 // database
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var database: myDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Initialize the database connection using room
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"
         ).build()
+
         add.setOnClickListener {
             val intent = Intent(this, CreateCard::class.java)
             startActivity(intent)

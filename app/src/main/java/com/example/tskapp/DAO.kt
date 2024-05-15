@@ -2,6 +2,8 @@ package com.example.tskapp
 
 import androidx.room.*
 
+
+//define methods for performing crud
 @Dao
 interface DAO {
     @Insert
